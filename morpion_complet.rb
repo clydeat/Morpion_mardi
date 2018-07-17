@@ -139,9 +139,9 @@ class Game
 
             puts "Voulez-vous rejouer une partie? (Y/N)"
         réponse = gets.chomp
-        if réponse == "Y" 
+        if réponse == "Y" || "y"
           Game.new.go
-        elsif réponse =="N"
+        elsif réponse =="N" || "n"
           exit
         else puts "Veuillez répondre par Y ou N "
         end 
