@@ -3,15 +3,16 @@ require 'pry'
 
 
 class BoardCase  #TO DO : la classe a 2 attr_accessor, sa valeur (X, O, ou vide), ainsi que son numéro de case)
-  attr_accessor :case_value # :case_number
-  
-  def initialize(case_value)    #TO DO doit régler sa valeur, ainsi que son numéro de case
-    @case_value = case_value
-    #@case_number = case_number
+#me permet de créer une case
+  attr_accessor :board_case # :case_number
+  #permet de rendre disponible les instances de variables dans d'autres classes
+  def initialize(board_case)    #TO DO doit régler sa valeur, ainsi que son numéro de case
+    @board_case = board_case.to_s
+    #pour assigner à une instance de variable une valeur, en l'occurence une variable ici
   end
   
   def to_s    #TO DO : doit renvoyer la valeur au format string
-    return "#{case_value}"
+    return "#{board_case}"
   end
 
 end
@@ -32,7 +33,9 @@ class Board
     @C2 = BoardCase.new    @C2 = 7     
     @C3 = BoardCase.new    @C3 = 8
 
-    @board = [ @A1.to_s , @A2.to_s  , @A3.to_s  , @B1.to_s  , @B2.to_s  , @B3.to_s  , @C1.to_s  , @C2.to_s  , @C3.to_s  ]
+    # @board = [ @A1.to_s , @A2.to_s  , @A3.to_s  , @B1.to_s  , @B2.to_s  , @B3.to_s  , @C1.to_s  , @C2.to_s  , @C3.to_s  ]
+    @board = [ @A1 , @A2 ,@A3 ,@B1 ,@B2 ,@B3 ,@C1 ,@C2 ,@C3 ]
+
   end
 
   def to_s   #TO DO : afficher le plateau
