@@ -4,6 +4,7 @@ require_relative 'boardcase'
 require_relative 'board'
 require_relative 'player'
 
+# Ajout d'un commentaire pour tester
 
 class Game
   def initialize     #TO DO : créé 2 joueurs, créé un board
@@ -38,19 +39,19 @@ class Game
     i = 0
     while i < 9
       @board.to_s
-      
-      if (i%2) == 0 
-        joueur_i = @player1 
+
+      if (i%2) == 0
+        joueur_i = @player1
       else joueur_i = @player2
       end
 
       @board.play(joueur_i, joueur_i.value_x_o )
-        if @board.victory 
+        if @board.victory
           @board.to_s
           puts "#{joueur_i.player_name} a gagné !"
           i = 10
 
-        else 
+        else
           i += 1
         end
 
@@ -63,12 +64,12 @@ class Game
 
             puts "Voulez-vous rejouer une partie? (Y/N)"
         réponse = gets.chomp
-        if réponse == "Y" 
+        if réponse == "Y"
           Game.new.go
         elsif réponse =="N"
           exit
         else puts "Veuillez répondre par Y ou N "
-        end 
+        end
   end
 
 end
